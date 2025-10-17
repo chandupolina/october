@@ -1,39 +1,26 @@
 pipeline {
-    agent any 
+    agent {
+        label 'java-slave'
+    }
     stages {
         stage ('Build') {
             steps {
-                echo "build stage "
+                echo "building pipeline"
             }
         }
         stage ('scan') {
             steps {
-                echo 'scan the source code'
+                echo "scan the pipeline"
             }
         }
         stage ('dockerbuild') {
             steps {
-                echo 'docoker pipeline'
+                echo " docker pipeline"
             }
         }
         stage ('devdeploy') {
             steps {
                 echo "deploying to dev"
-            }
-        }
-        stage ('testdeploy') {
-            steps {
-                echo "deploying to test"
-            }
-        }
-        stage ('DeployTOStage') {
-            steps {
-                echo "Deploying to Stage env"
-            }
-        }
-        stage ('DeployToProd') {
-            steps {
-                echo "Deploying to Prod env"
             }
         }
     }
