@@ -1,9 +1,39 @@
 pipeline {
-    agent any
+    agent any 
     stages {
-        stage ("Example Stage") {
+        stage ('Build') {
             steps {
-                echo "Hello, World!"
+                echo "build stage "
+            }
+        }
+        stage ('scan') {
+            steps {
+                echo 'scan the source code'
+            }
+        }
+        stage ('dockerbuild') {
+            steps {
+                echo 'docoker pipeline'
+            }
+        }
+        stage ('devdeploy') {
+            steps {
+                echo "deploying to dev"
+            }
+        }
+        stage ('testdeploy') {
+            steps {
+                echo "deploying to test"
+            }
+        }
+        stage ('DeployTOStage') {
+            steps {
+                echo "Deploying to Stage env"
+            }
+        }
+        stage ('DeployToProd') {
+            steps {
+                echo "Deploying to Prod env"
             }
         }
     }
