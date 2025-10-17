@@ -3,7 +3,7 @@ pipeline {
         label 'java-slave'
     }
     stages {
-        stage ('Build') {
+        stage ('Build') { 
             steps {
                 echo "building pipeline"
             }
