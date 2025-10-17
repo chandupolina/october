@@ -10,7 +10,7 @@ pipeline {
         }
         stage ('scan') {
             steps {
-                echo "scan the pipeline"
+                echo "scan the pipeline"  
             }
         }
         stage ('dockerbuild') {
